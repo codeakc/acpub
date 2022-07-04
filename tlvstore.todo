@@ -1,0 +1,7 @@
+1. Add command to create a new config.
+cmd: add config NEWCONFIGNAME
+
+config-NEWCONFIGNAME# )
+	cmd: add config-element CETYPE CELEN
+	cmd: add config-instances NUM_NEWCONFIGNAME_INSTANCES (number of maximum instances to be supported for this config)
+
