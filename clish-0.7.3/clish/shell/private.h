@@ -131,4 +131,5 @@ tinyrl_t *
                            unsigned stifle);
 void
     clish_shell_tinyrl_delete(tinyrl_t *instance);
+void clish_shell_tlvstore(void);
 

@@ -209,6 +209,8 @@ clish_shell_execute(clish_shell_t         *this,
 
     assert(NULL != cmd);
 
+	clish_shell_tlvstore();
+
     builtin = clish_command__get_builtin(cmd);
     script = clish_command__get_action(cmd,this->viewid,*pargv);
     /* account for thread cancellation whilst running a script */
