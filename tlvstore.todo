@@ -1,7 +1,24 @@
-1. Add command to create a new config.
-cmd: add config NEWCONFIGNAME
+Commands -
 
-config-NEWCONFIGNAME# )
-	cmd: add config-element CETYPE CELEN
-	cmd: add config-instances NUM_NEWCONFIGNAME_INSTANCES (number of maximum instances to be supported for this config)
+To create a new config element:
+create config-element CELNAME CTYPE CELEN
 
+To create a schema user can create a new config and add config-element(s) to it.
+
+Create a new schema
+create config CONFIGNAME
+new-config-CONFIGNAME#)
+add config-element CELNAME INSTANCES
+
+Show existing entries:
+show config-all
+show config CONFIGNAME
+
+show config-element-all
+show config-element CELNAME
+
+Delete entries:
+delete config-all
+delete config CONFIGNAME
+delete config-element-all
+delete config-element CELNAME
