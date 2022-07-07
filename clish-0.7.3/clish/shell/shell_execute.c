@@ -19,7 +19,8 @@ static clish_shell_builtin_fn_t
     clish_overview,
     clish_source,
     clish_source_nostop,
-    clish_history;
+    clish_history,
+	clish_usr_cb;
 
 static clish_shell_builtin_t clish_cmd_list[] =
 {
@@ -28,8 +29,21 @@ static clish_shell_builtin_t clish_cmd_list[] =
     {"clish_source",        clish_source},
     {"clish_source_nostop", clish_source_nostop},
     {"clish_history",       clish_history},
+	{"clish_usr_cb", 		clish_usr_cb},
     {NULL,NULL}
 };
+
+/* Macro to define a new clish callback */
+#define NCB(cb)	\
+	static bool_t	\
+	cb(const clish_shell_t *shell,	\
+	   const lub_argv_t *argv)
+
+NCB(clish_usr_cb)
+{
+	printf("%s invoked\n", __func__);
+	return BOOL_TRUE;
+}
 /*----------------------------------------------------------- */
 /*
  Terminate the current shell session 
@@ -43,6 +57,7 @@ clish_close(const clish_shell_t *shell,
     
     argv = argv; /* not used */
     this->state = SHELL_STATE_CLOSING;
+	printf("Closing cli...\n");
 
     return BOOL_TRUE;
 }
@@ -208,8 +223,6 @@ clish_shell_execute(clish_shell_t         *this,
     char       *script;
 
     assert(NULL != cmd);
-
-	clish_shell_tlvstore();
 
     builtin = clish_command__get_builtin(cmd);
     script = clish_command__get_action(cmd,this->viewid,*pargv);
