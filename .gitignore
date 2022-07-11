@@ -2,3 +2,5 @@
 *.out
 *.la
 *.a
+clish-0.7.3/autom4te.cache/
+clish-0.7.3/config.h.in~
