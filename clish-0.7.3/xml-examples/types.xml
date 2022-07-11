@@ -24,4 +24,8 @@
 	    pattern="true(1) false(0)"
 	       help="Boolean choice"/>
 	<!--=======================================================-->
+	<PTYPE name="CETYPE"
+	    pattern="string(0) integer(1)"
+	       help="Data type of configuration"/>
+	<!--=======================================================-->
 </CLISH_MODULE>

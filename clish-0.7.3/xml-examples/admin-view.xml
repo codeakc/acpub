@@ -10,6 +10,13 @@
                  view="root-view">
 		<ACTION>echo "Leaving admin-view" </ACTION>
         </COMMAND>
+		<COMMAND name="create" help="Create" />
+		<COMMAND name="create config-element" help="Create a new config element">
+				<PARAM name="cename" help="Config element name" ptype="STRING" />
+				<PARAM name="cetype" help="Config element type" ptype="CETYPE" />
+				<PARAM name="celen" help="Config element length in bytes" ptype="UINT" />
+			<ACTION builtin="clish_usr_cb">"config-element" 1 ${cename} ${cetype} ${celen}</ACTION>
+		</COMMAND>
     </VIEW>
 
 </CLISH_MODULE>

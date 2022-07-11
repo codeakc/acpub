@@ -39,9 +39,13 @@ static clish_shell_builtin_t clish_cmd_list[] =
 	cb(const clish_shell_t *shell,	\
 	   const lub_argv_t *argv)
 
+#define ARG(n)	\
+		lub_argv__get_arg(argv, n)
+
 NCB(clish_usr_cb)
 {
 	printf("%s invoked\n", __func__);
+	printf("command %s, add(%s), cename(%s), cetype(%s), celen(%s)\n", ARG(0), ARG(1), ARG(2), ARG(3), ARG(4));
 	return BOOL_TRUE;
 }
 /*----------------------------------------------------------- */
