@@ -10,8 +10,8 @@ add_executable(hw main.cpp)
 add_subdirectory(math)
 
 # link libraries
-target_link_libraries(hw PUBLIC pthread) # existing system library for multi-threading
-target_link_libraries(hw PUBLIC mymath)  # custom library to perform math operations
+target_link_libraries(hw PUBLIC pthread mymath) # existing system library for multi-threading
+#target_link_libraries(hw PUBLIC mymath)  # custom library to perform math operations
 
 # include header files from other directories
 target_include_directories(
