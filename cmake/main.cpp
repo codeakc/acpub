@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <iostream>
+#include <math.hpp>
 
 using namespace std;
 
@@ -31,5 +32,6 @@ int main(void)
 		printf("Failed to join thread\n");
 		return 1;
 	}
+	printf("Add(3,5) = %d\n", add(3,5));
 	return 0;
 }
