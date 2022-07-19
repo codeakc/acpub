@@ -6,7 +6,13 @@ using namespace std;
 
 static void *ptcb(void *arg)
 {
+	int num1, num2;
 	printf("%s: called\n", __func__);
+	cout<<"Enter number 1: "<<endl;
+	cin>>num1;
+	cout<<"Enter number 2: "<<endl;
+	cin>>num2;
+	cout<<"Sum: "<<num1 + num2<<endl;
 	return NULL;
 }
 int main(void)
