@@ -5,3 +5,6 @@ project(HW)
 
 # binary
 add_executable(hw main.c)
+
+# link libraries
+target_link_libraries(hw PUBLIC pthread)
