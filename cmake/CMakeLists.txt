@@ -6,5 +6,16 @@ project(HW)
 # binary
 add_executable(hw main.cpp)
 
+# include sub-directories
+add_subdirectory(math)
+
 # link libraries
 target_link_libraries(hw PUBLIC pthread)
+target_link_libraries(hw PUBLIC mymath)
+
+# include header files from other directories
+target_include_directories(
+					hw PUBLIC
+					"${PROJECT_BINARY_DIR}"
+					"${PROJECT_SOURCE_DIR}/math"
+				)
